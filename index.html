@@ -1,0 +1,31 @@
+<!doctype.html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giphy</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--ADD FONT FROM GOOGLE HERE for header and maybe buttons-->
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+	<!-- Header for the page -->
+<h1>Gallery of the MEME Train</h1>
+<!-- lists of buttons in the array premade -->
+<div id="giphyList"></div>
+<!-- input button and box form for user to add more selections -->
+<form id="Giphy">
+	<lable for="giphy-add">Add a Selection Here:</lable>
+	<input type="text" id="giphy-add"><br>
+	<input id="addButton" class="btn btn-primary btn-lg" type="submit" value="Add">
+</form>
+<!-- displaying all the giphys -->
+<div id="giphyDiv"></div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="api.js"></script>
+
+</body>
+</html>
