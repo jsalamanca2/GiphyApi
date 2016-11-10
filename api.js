@@ -27,7 +27,13 @@ function displayGiphy(){
 	});
 });
 }
-
+// attribute class for the play and pause for the giphys.
+$(document).on('mouseover','.choice', function(){
+           $(this).attr('src', $(this).data('play'));                 
+}); 
+$(document).on('mouseleave','.choice', function(){
+           $(this).attr('src', $(this).data('paused'));                   
+});
 
 // show list of the button in a loop from the premade array
 function addNewGiphyButton(){
