@@ -19,6 +19,7 @@ img{
 	height: 150px;
 	width:100px;
 }
+
 #Giphy{
 	font-size: 20px;
 	float: left;
@@ -29,5 +30,5 @@ img{
 	width: 50%;
 }
 #giphyDiv{
-	margin-top: 120px;
+	margin-top: 100px;
 }

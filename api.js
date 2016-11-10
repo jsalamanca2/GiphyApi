@@ -1,7 +1,7 @@
-var cartoonGiphyArry = ["Sponge Bob", "Adventure Time", "Rugrats", "Hey Arnold", "Rocket Power", "South Park", "Simpsons", "Family Guy", "Futurama", "Teen Titans", "Dark Wing Duck", "Phineas and Ferb", "Doug", "Chowder", "Anamaniacs"];
+var cartoonGiphyArray = ["Sponge Bob", "Adventure Time", "Rugrats", "Hey Arnold", "Rocket Power", "South Park", "Simpsons", "Family Guy", "Futurama", "Teen Titans", "Dark Wing Duck", "Phineas and Ferb", "Doug", "Chowder", "Archer"];
 var currentGiphy;
-var arryOfGif;
-var arryOfPausedGif;
+var arrayOfGif;
+var arrayOfPausedGif;
 var newGiphy;
 var giph;
 
@@ -16,18 +16,19 @@ function displayGiphy(){
 	currentGiphy = giphyData.data;
 	
 	$.each(currentGiphy, function(index, value){
-	arryOfGif= value.images.original.url;
-	arryOfPausedGif = value.images.original_still.url;
+	arrayOfGif= value.images.original.url;
+	arrayOfPausedGif = value.images.original_still.url;
 	newGiphy = $('<img class="img-rounded">');
-	newGiphy.attr('src', arryOfPausedGif);
+	newGiphy.attr('src', arrayOfPausedGif);
 	newGiphy.addClass('choice');
-	newGiphy.attr('data-play', arryOfGif);
-	newGiphy.attr('data-paused', arryOfPausedGif);
+	newGiphy.attr('data-play', arrayOfGif);
+	newGiphy.attr('data-paused', arrayOfPausedGif);
 	$("#giphyDiv").append(newGiphy);
+	
 	});
 });
 }
-// attribute class for the play and pause for the giphys.
+// attribute class for the play and pause for the giphys when mouse over.
 $(document).on('mouseover','.choice', function(){
            $(this).attr('src', $(this).data('play'));                 
 }); 
@@ -38,18 +39,19 @@ $(document).on('mouseleave','.choice', function(){
 // show list of the button in a loop from the premade array
 function addNewGiphyButton(){
 	$("#giphyList").html('');
-	for (var i=0; i<cartoonGiphyArry.length; i++){
+	for (var i=0; i<cartoonGiphyArray.length; i++){
 		giph = $('<button id="btn" class="btn btn-warning">');
 		giph.addClass("giphyChoice");
-		giph.attr('data-name', cartoonGiphyArry[i]);
-		giph.text(cartoonGiphyArry[i]);
+		giph.attr('data-name', cartoonGiphyArray[i]);
+		giph.text(cartoonGiphyArray[i]);
 		$("#giphyList").append(giph);
+		var p = $('<p>').text("Rating: " + cartoonGiphyArray[i].rating);
 	}
 }
 // add new buttons
 $("#addButton").on('click', function(){
 	var giphyChoice = $("#giphy-add").val().trim();
-	cartoonGiphyArry.push(giphyChoice);
+	cartoonGiphyArray.push(giphyChoice);
 	addNewGiphyButton();
 	return false;
 });
