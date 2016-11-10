@@ -1,0 +1,27 @@
+body{
+	background-image: url("./images/bg.png");
+}
+#btn {
+	margin: 5px 5px;
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size: 20px;
+}
+#btn:Hover{
+	background-color: blue;
+}
+h1{
+	font-family: 'Ravi Prakash', cursive;
+
+}
+#Giphy{
+	font-size: 20px;
+	float: left;
+	margin: 20px 10px 10px 10px;
+}
+#addButton{
+	margin-top: 10px;
+	width: 50%;
+}
+#giphyDiv{
+	margin-top: 120px;
+}
